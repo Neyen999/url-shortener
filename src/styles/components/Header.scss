@@ -1,0 +1,135 @@
+.header {
+  position: relative;
+  padding: 15px;
+  &--nav {
+    @include media(desktop-m) {
+      display: flex;
+      justify-content: space-around;
+    }
+    h1 {
+      @include media(desktop-m) {
+        width: 10%;
+      }
+    }
+  }
+  & .hide {
+    display: none;
+    @include media(desktop-m) {
+      display: flex;
+    }
+  }
+  & .show {
+    width: 90%;
+    margin: 0 5%;
+    height: 300px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: $primary-vio;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-weight: 700;
+    animation-name: comeback;
+    animation-duration: 1s;
+  }
+  & .navbar {
+    @include media(desktop-m) {
+      width: 90%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+  & .navbar ul {
+    list-style: none;
+    @include media(desktop-m) {
+     display: flex; 
+     margin-left: 30px;
+    }
+    li {
+      margin-bottom: 20px;
+      @include media(desktop-m) {
+        margin-bottom: 0;
+        margin-right: 15px;
+       }
+      a {
+        text-decoration: none;
+        @include media(desktop-m) {
+          color: #b1b0b0;
+        }
+      }
+    }
+  }
+  & .navbar hr {
+    width: 80%;
+    @include media(desktop-m) {
+      display: none;
+    }
+  }
+  & .signup {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media(desktop-m) {
+      display: flex; 
+      flex-direction: row;
+      margin-top: 0;
+      justify-content: flex-end;
+     }
+    button {
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    & .login {
+      background: none;
+      border: none;
+      @include media(desktop-m) {
+        color: #333;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+    & .sign {
+      width: 90%;
+      height: 45px;
+      padding: 10px 5px;
+      border: none;
+      border-radius: 15px;
+      background-color: hsl(180, 66%, 49%);
+      @include media(desktop-m) {
+        width: 90px;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+  & .fa-bars {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #b1b0b0;
+    @include media(desktop-m) {
+      display: none;
+    }
+  }
+}
+
+@keyframes comeback {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 100%;
+  }
+}

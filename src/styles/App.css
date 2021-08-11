@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2 {
   font-weight: 700;
   color: #333;
@@ -13,6 +17,77 @@ h1, h2 {
 .header {
   position: relative;
   padding: 15px;
+}
+
+.hide {
+  display: none;
+  transition: 2s ease-in-out;
+}
+
+.show {
+  width: 90%;
+  margin: 0 5%;
+  height: 300px;
+  border-radius: 15px;
+  background-color: hsl(257, 27%, 26%);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: 700;
+  animation-name: comeback;
+  animation-duration: 1s;
+}
+
+.navbar ul {
+  list-style: none;
+  color: #fff;
+}
+
+.navbar ul li {
+  margin-bottom: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar hr {
+  width: 80%;
+}
+
+.signup {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup button {
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.signup .login {
+  background: none;
+  border: none;
+}
+
+.signup .sign {
+  width: 90%;
+  height: 45px;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 15px;
+  background-color: hsl(180, 66%, 49%);
 }
 
 .fa-bars {
@@ -24,6 +99,11 @@ h1, h2 {
 }
 
 /* BANNER */
+
+.banner {
+  position: relative;
+  padding: 0 0 100px 0;
+}
 
 .banner--title h2 {
   text-align: center;
@@ -63,12 +143,15 @@ h1, h2 {
 }
 
 .banner .banner--img__container {
-  width: 370px;
+  width: 100%;
+  min-width: 370px;
   overflow: hidden;
 }
 
 .banner .banner--img {
-  width: 450px;
+  width: 100%;
+  min-width: 450px;
+  max-width: 1280px;
   margin-left: 10%;
 }
 
@@ -81,64 +164,114 @@ h1, h2 {
   border-radius: 18px;
   background-color: hsl(257, 27%, 26%);
   margin: 0 auto;
-}
-
-.form--container form {
-  width: 90%;
-  margin: 0 auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
-.form--container form input, .form--container form button {
+.form--container input, .form--container button {
   border-radius: 5px;
   border: none;
-  padding: 10px 5px;
+  padding: 10px 8px;
 }
 
-.form--container form button {
+.form--container button {
+  width: 80%;
   background-color: hsl(180, 66%, 49%);
   color: #fff;
   font-weight: 500;
   text-shadow: 2px 2px 8px rgb(71, 71, 71);
 }
 
-.form--container form input {
-  margin-bottom: 40px;
+.form--container input {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
-.shorted--links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  padding: 10px;
-  margin: 0 auto;
+.disabled--form {
+  opacity: .5;
 }
 
 /* ADVANCED */
 
 .stats {
   background-color: hsl(0, 7%, 92%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.stats .short--box {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto 20px;
+  text-align: left;
+  /* overflow-wrap: anywhere; */
+}
+
+.short--box .short--link {
+  display: flex;
+  flex-direction: column;
+}
+
+.short--box .short--link p {
+  color: hsl(180, 66%, 49%);
+  margin-bottom: 10px;
+}
+
+.short--box .short--link p i {
+  margin-left: 8px;
+}
+
+.short--box .short--link .button {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 5px;
+}
+
+.short--box .short--link .copy {
+  background-color: hsl(180, 66%, 49%);
+}
+
+.short--box .short--link .copied {
+  background-color: hsl(257, 27%, 26%);
+}
+
 
 .stats--title {
   text-align: center;
+  margin-top: 150px;
 }
 
 .stats--title h2 {
   margin-bottom: 10px;
 }
 
-.stats--title p {
+.stats--title .advanced--description {
   color: rgb(128, 128, 128);
+  margin-bottom: 40px;
 }
 
-.box1, 
-.box2, 
-.box3 {
+/* .stat .short--box p {
+  margin-bottom: none;
+} */
+
+.box {
  width: 300px;
  height: 300px;
+ position: relative;
  padding: 10px 8px;
  background: #f5f5f5;
  margin-bottom: 20px;
@@ -152,6 +285,19 @@ h1, h2 {
  justify-content: space-around;
 }
 
+.logo--container {
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10%;
+  transform: translateY(10%);
+  background-color: hsl(257, 27%, 26%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .stats--details {
   display: flex;
@@ -160,6 +306,83 @@ h1, h2 {
   align-items: center;
 }
 
+.stats--details h3 {
+  margin: 30px 0 10px 0;
+}
+
+
+/* FOOTER */
+
+.footer {
+  background-color: hsl(260, 8%, 14%);
+}
+
+.footer .footer--started {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../images//bg-boost-mobile.svg")center center/cover no-repeat;
+  background-color: hsl(257, 27%, 26%);
+  height: 250px;
+}
+
+.footer--started h2, .footer--started button {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer--started button {
+  width: 120px;
+  background-color: hsl(180, 66%, 49%);
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgb(71, 71, 71);
+  border: none;
+  padding: 10px 8px;
+  border-radius: 20px;
+}
+
+.footer--details {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px 5px;
+}
+
+.footer--title {
+  margin-bottom: 35px;
+}
+
+.footer--title h3 {
+  font-size: 1.8rem;
+}
+
+.footer--features {
+  margin-bottom: 30px;
+}
+
+.footer--features h3 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.footer--features p {
+  font-size: 1rem;
+  color: hsl(0, 0%, 75%);
+}
+
+
+.footer--social {
+  width: 50%;
+  margin: 0 auto;
+  padding: 15px 5px 20px 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 /*
 LOADING
@@ -218,5 +441,15 @@ LOADING
   }
   100% {
     transform: translate(24px, 0);
+  }
+}
+
+@keyframes comeback {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 100%;
   }
 }

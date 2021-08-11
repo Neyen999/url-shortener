@@ -1,0 +1,91 @@
+.banner {
+  position: relative;
+  padding: 0 0 100px 0;
+  & .banner--title h2 {
+    text-align: center;
+    line-height: 90%;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  & .banner--title p {
+    text-align: center;
+    color: rgb(128, 128, 128);
+    margin-bottom: 15px;
+  }
+  & .banner--title .banner--img__container {
+    width: 100%;
+    min-width: 370px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    @include media(desktop-m) {
+      display: flex;
+      justify-content: center;
+    }
+    & .banner--img {
+      width: 100%;
+      min-width: 450px;
+      max-width: 1050px;
+    }
+  }
+  & .banner--title .button--container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px  ;
+      height: 40px;
+      margin-bottom: 15px;
+      background-color: hsl(180, 66%, 49%);
+      color: #fff;
+      font-weight: 500;
+      text-shadow: 2px 2px 8px rgb(71, 71, 71);
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  & .form--container {
+    width: 80%;
+    height: 160px;
+    padding: 15px;
+    border-radius: 18px;
+    background-color: $primary-vio;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    @include media(desktop-m) {
+      width: 50%;
+    }
+    & input, & button {
+      border-radius: 5px;
+      border: none;
+      padding: 10px 10px;
+    }
+    & button {
+      width: 80%;
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: 500;
+      text-shadow: 2px 2px 8px rgb(71, 71, 71);
+    }
+    & input {
+      width: 80%;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
+  & .disabled--form {
+    opacity: .5;
+  }
+}
